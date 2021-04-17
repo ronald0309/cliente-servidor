@@ -57,7 +57,7 @@ const respondToClient = () => {
     ];
   
     //TODO: Completar esta función para que devuelva un string aleatorio del arreglo anterior
-    return commonAnswers[5];
+    return commonAnswers[Math.floor(Math.random() * (commonAnswers.length)) ];
   
   };
   
@@ -69,6 +69,7 @@ wss.on('connection', (ws: any) => {
 
   ws.on('message', (message: any) => {
     console.log(`[Client]: ${message}`);
+    ws.send(respondToClient())
   });
 
   ws.on('end', () => {
