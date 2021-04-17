@@ -3,9 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": { 
+    "client-tcp-dev": "nodemon src/client-tcp.ts --exec ts-node",
+    "server-tcp-dev": "nodemon src/server-tcp.ts --exec ts-node" ,
+    "client-udp-dev": "nodemon src/client-udp.ts --exec ts-node",
+    "server-udp-dev": "nodemon src/server-udp.ts --exec ts-node" ,
+    "build": "tsc --build",
+    "clean-build": "tsc --build --clean",
+    "rebuild": "npm run clean-build && npm run build",
+    "client-tcp-prod": "node dist/client-tcp.js",
+    "server-tcp-prod": "node dist/server-tcp.js",
+    "client-udp-prod": "node dist/client-udp.js",
+    "server-udp-prod": "node dist/server-udp.js"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ronald0309/cliente-servidor.git"
