@@ -25,8 +25,12 @@ ws.onmessage = function (event: any) {
 
   stdin.addListener('data', function (d) {
     const message = d.toString().trim();
- 
-      ws.send(message);
+        if(message=='#salir'){
+            ws.send('Adios servidor!');
+            ws.close();}
+        else{
+            ws.send(message);
+        }
    
   });
 }
